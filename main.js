@@ -37,8 +37,16 @@ function atualizaCronometro() {
 
 // Mostrar cronômetro ao clicar
 function mostrarCronometro(indice) {
-  let cronometro = document.getElementById("cronometro" + indice);
-  cronometro.style.display = cronometro.style.display === "block" ? "none" : "block";
+  let cronometros = document.querySelectorAll(".cronometro");
+  let imagens = document.querySelectorAll(".imagem-objetivo");
+
+  // esconde tudo primeiro
+  cronometros.forEach(c => c.style.display = "none");
+  imagens.forEach(img => img.style.display = "none");
+
+  // mostra só o clicado
+  cronometros[indice].style.display = "block";
+  imagens[indice].style.display = "block";
 }
 
 // Inicia atualização
